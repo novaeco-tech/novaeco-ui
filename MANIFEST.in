@@ -1,0 +1,3 @@
+recursive-include novaeco_ui/templates *
+recursive-include novaeco_ui/static *
+include VERSION

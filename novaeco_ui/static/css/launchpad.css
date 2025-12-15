@@ -1,0 +1,42 @@
+/* Scoped with 'nova-' prefix to avoid clashing with app styles */
+.nova-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f2027; /* NovaEco Dark Theme */
+  color: white;
+  padding: 0 1rem;
+  height: 60px;
+}
+
+.nova-brand a { color: white; text-decoration: none; font-weight: bold; font-size: 1.2rem; }
+
+/* Dropdown Logic */
+.nova-dropdown { position: relative; display: inline-block; }
+.nova-dropbtn { background: none; border: none; color: white; cursor: pointer; padding: 10px; }
+.nova-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 10px;
+}
+.nova-dropdown:hover .nova-dropdown-content { display: block; }
+
+/* Grid Layout for Apps */
+.nova-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nova-grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+.nova-grid a:hover { background-color: #f0f0f0; }
+.nova-grid a.active { background-color: #e8f5e9; color: #2e8555; }

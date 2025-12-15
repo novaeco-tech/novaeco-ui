@@ -1,0 +1,38 @@
+{% macro render_launchpad(user, active_app='home', urls={}) %}
+{# Default to empty dict if not provided, allowing fallback or config-based lookup #}
+<nav class="nova-navbar">
+  <div class="nova-brand">
+    {# Use the provided URL or fall back to '#' #}
+    <a href="{{ urls.get('app', '#') }}" class="nova-logo">訣 NovaEco</a>
+  </div>
+
+  <div class="nova-apps">
+    <div class="nova-dropdown">
+      <button class="nova-dropbtn" aria-label="Apps">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" fill="currentColor"/>
+        </svg>
+      </button>
+      <div class="nova-dropdown-content">
+        <div class="nova-grid">
+          <a href="{{ urls.get('admin', '#') }}" class="{{ 'active' if active_app == 'admin' }}">
+            <span class="icon">🎮</span> Mission Control
+          </a>
+          <a href="{{ urls.get('agro', '#') }}" class="{{ 'active' if active_app == 'agro' }}">
+            <span class="icon">🌾</span> NovaAgro
+          </a>
+          <a href="{{ urls.get('trade', '#') }}" class="{{ 'active' if active_app == 'trade' }}">
+            <span class="icon">📈</span> NovaTrade
+          </a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<div class="nova-user">
+      ...
+      {# Make the logout URL dynamic too #}
+      <a href="{{ urls.get('auth_logout', '#') }}" class="nova-btn-logout">Logout</a>
+  </div>
+</nav>
+{% endmacro %}
